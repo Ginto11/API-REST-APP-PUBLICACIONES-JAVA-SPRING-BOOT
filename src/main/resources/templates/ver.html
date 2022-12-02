@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Publicacion</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" th:href="@{/img/spring.png}"/>
+        <link rel="stylesheet" th:href="@{/estilos/estilos.css}"/>
+    </head>
+    <body>
+        <main style="position: relative;">
+
+            <div class="contenedor__redes">
+                <div class="div1">
+                    <img th:src="@{/img/logo_instagram.png}" alt="alt"/>
+                </div>
+                <div class="div2">
+                    <img th:src="@{/img/logo_youtube.png}" alt="alt"/>
+                </div>
+                <div class="div3">
+                    <img th:src="@{/img/logo_facebook.png}" alt="alt"/>
+                </div>
+                <div class="div4">
+                    <img th:src="@{/img/logo_twitter.png}" alt="alt"/>
+                </div>
+                <div style="background-color: #fff; border-radius: 50%;" class="div4">
+                    <img th:src="@{/img/github.png}" alt="alt"/>
+                </div>
+            </div>
+
+            <header class="header">
+
+                <div class="header__contenedor-titulo">
+                    <div class="header__contenedor--img">
+                        <img th:src="@{/img/spring.png}" alt="Icono Spring Boot"/>
+                    </div>
+
+                    <h1>API REST CON SPRING BOOT</h1>
+                </div>
+
+                <div class="header__contenedor--acerca">
+                    <a th:href="@{/index}">Limpiar Path</a>
+                    <a th:href="@{/form}">New Post</a>
+                    <a th:href="@{/acerca-de}">Acerca de</a>
+                </div>
+
+            </header>
+            
+            <section>
+                <h2 th:text="${publicacion.titulo}"></h2>
+
+                <div class="publicacion">
+                    <div>
+                        <h4>Autor</h4>
+                        <p th:text="${publicacion.autor}"></p>
+                    </div>
+                    <div>
+                        <h4>Descripcion</h4>
+                        <p th:text="${publicacion.descripcion}"></p>
+                    </div>
+                    <div>
+                        <h4>Etiquetas</h4>
+                        <p th:text="${publicacion.etiquetas}"></p>
+                    </div>
+                    <div class="contenedor__opciones">
+                        <a style="background-color: #fc6d00;" th:href="@{/index}">Regresar</a>
+                        <a class="btn__editar" th:href="@{/editar (id=${publicacion.id})}">Editar</a>
+                        <a class="btn__eliminar" th:href="@{/delete  (id=${publicacion.id})}">Eliminar</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

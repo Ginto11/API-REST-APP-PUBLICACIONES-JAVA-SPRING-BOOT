@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Editando</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" th:href="@{/img/spring.png}"/>
+        <link rel="stylesheet" th:href="@{/estilos/estilos.css}"/>
+    </head>
+    <body>
+        <main style="position: relative;">
+
+            <div class="contenedor__redes">
+                <div class="div1">
+                    <img th:src="@{/img/logo_instagram.png}" alt="alt"/>
+                </div>
+                <div class="div2">
+                    <img th:src="@{/img/logo_youtube.png}" alt="alt"/>
+                </div>
+                <div class="div3">
+                    <img th:src="@{/img/logo_facebook.png}" alt="alt"/>
+                </div>
+                <div class="div4">
+                    <img th:src="@{/img/logo_twitter.png}" alt="alt"/>
+                </div>
+                <div style="background-color: #fff; border-radius: 50%;" class="div4">
+                    <img th:src="@{/img/github.png}" alt="alt"/>
+                </div>
+            </div>
+
+            <header class="header">
+
+                <div class="header__contenedor-titulo">
+                    <div class="header__contenedor--img">
+                        <img th:src="@{/img/spring.png}" alt="Icono Spring Boot"/>
+                    </div>
+
+                    <h1>API REST CON SPRING BOOT</h1>
+                </div>
+
+                <div class="header__contenedor--acerca">
+                    <a th:href="@{/acerca-de}">Acerca de</a>
+                </div>
+
+            </header>
+            
+            <section>
+                <form class="formulario" th:action="@{/index}" method="POST" th:object="${publicacion}">
+                    <h2>Editando Publicacion</h2>
+                    <div class="contenedor--inputs">
+                        <h4>ID</h3> <br>
+                        <input type="number" name="id" th:value="${publicacion.id}" required="" readonly>
+                    </div>
+                    <div class="contenedor--inputs">
+                        <h4>Titulo</h3> <br>
+                        <input type="text" name="titulo" th:value="${publicacion.titulo}" required="">
+                    </div>
+                    <div class="contenedor--inputs">
+                        <h4>Autor</h3> <br>
+                        <input type="text" name="autor" th:value="${publicacion.autor}" required="">
+                    </div>
+                    <div class="contenedor--inputs">
+                        <h4>Descripcion</h3> <br>
+                        <textarea  name="descripcion"  th:text="${publicacion.descripcion}" required=""></textarea>
+                    </div>
+                    <div class="contenedor--inputs">
+                        <h4>Etiquetas</h3> <br>
+                        <input type="text" name="etiquetas" th:value="${publicacion.etiquetas}" required="">
+                    </div>
+                    <div class="contenedor-botones">
+                        <a th:href="@{/index}">Regresar</a>
+                        <input type="submit" name="enviar" value="Actualizar">
+                    </div>
+                </form>
+            </section>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Acerca de</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" th:href="@{/img/spring.png}"/>
+        <link rel="stylesheet" th:href="@{/estilos/estilos.css}"/>
+    </head>
+    <body>
+        <main>
+            <div class="contenedor__redes">
+                <div class="div1">
+                    <img th:src="@{/img/logo_instagram.png}" alt="alt"/>
+                </div>
+                <div class="div2">
+                    <img th:src="@{/img/logo_youtube.png}" alt="alt"/>
+                </div>
+                <div class="div3">
+                    <img th:src="@{/img/logo_facebook.png}" alt="alt"/>
+                </div>
+                <div class="div4">
+                    <img th:src="@{/img/logo_twitter.png}" alt="alt"/>
+                </div>
+                <div style="background-color: #fff; border-radius: 50%;" class="div4">
+                    <img th:src="@{/img/github.png}" alt="alt"/>
+                </div>
+            </div>
+            
+            <header class="header">
+                <div class="header__contenedor-titulo">
+                    <div class="header__contenedor--img">
+                        <img th:src="@{/img/spring.png}" alt="Icono Spring Boot"/>
+                    </div>
+                    
+                    <h1>API REST CON SPRING BOOT</h1>
+                </div>
+                <div class="header__contenedor--acerca">
+                    <a th:href="@{/index}">Regresar</a>
+                </div>
+            </header>
+            
+            <section>
+                <h2>Acerca de</h2>
+                <article class="articulo">
+                    <p>
+                        Este proyecto fue realizado con el fin de probar como se hace una <strong>API REST</strong> 
+                        en java usando <strong>SPRING BOOT</strong>, en la cual se pueden crear publicaciones y cada una
+                        tiene su autor, descripcion y etiquetas.
+                    </p>
+                    <p>
+                        Para el uso de repositorios se utilizo <strong>Spring Data JPA</strong>, se utilizo <strong>Hibernate</strong> para el mapeo de entidades
+                        a la base de datos. Como gestor de bases de datos se utilizo <strong>MySQL</strong>
+                    </p>
+                    <div>
+                        <h1>Dependencias del proyecto</h1>
+                        <ul th:each="dependencia : ${dependencias}">
+                            <li th:text="${dependencia}"></li>
+                        </ul>
+
+                    </div>
+                </article>
+            </section>
+
+        </main>
+    </body>
+</html>
